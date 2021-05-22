@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
-
+import { View, Text, TouchableOpacity, TextInput, StyleSheet, Button } from 'react-native'
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+ 
   class Login extends Component {
     state = {
       email: '',
@@ -54,6 +55,14 @@ import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-nativ
       }>
     <Text style = {styles.submitButtonText}> Submit </Text>
     </TouchableOpacity>
+    <Button
+          title="Go to ToDoList"
+          onPress={() => this.props.navigation.navigate('ToDoList')}
+/>
+<Button
+          title="Go to ImagePicker"
+          onPress={() => this.props.navigation.navigate('ImagePickerEx')}
+/>
     </View>
     )
   }

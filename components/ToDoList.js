@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, ScrollView } from 'react-native';
-import Task from './components/Task';
+import { KeyboardAvoidingView, StyleSheet, Text, View,Button ,TextInput, TouchableOpacity, Keyboard, ScrollView } from 'react-native';
+import Task from './Task';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+
 
 export default function App() {
   const [task, setTask] = useState();
@@ -50,7 +52,7 @@ export default function App() {
       {/* Write a task */}
       {/* Uses a keyboard avoiding view which ensures the keyboard does not cover the items on screen */}
       <KeyboardAvoidingView 
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        
         style={styles.writeTaskWrapper}
       >
         <TextInput style={styles.input} placeholder={'Write a task'} value={task} onChangeText={text => setTask(text)} />
@@ -60,6 +62,10 @@ export default function App() {
           </View>
         </TouchableOpacity>
       </KeyboardAvoidingView>
+      {/* <Button
+          title="Go to ImagePicker"
+          onPress={() => this.props.navigation.navigate('ImagePickerEx')}
+/> */}
       
     </View>
   );
